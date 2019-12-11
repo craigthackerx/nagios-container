@@ -101,6 +101,7 @@ WORKDIR /opt
 
 #Add Scipts & Config
 ADD libexec /usr/local/nagios/libexec/
+chmod a+x -R /usr/local/nagios
 
 
 #Expose Ports
