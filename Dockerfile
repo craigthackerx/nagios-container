@@ -101,7 +101,6 @@ WORKDIR /opt
 
 
 #Add Scipts & Config
-ADD etc/ /usr/local/nagios/etc/
 ADD libexec /usr/local/nagios/libexec/
 
 
