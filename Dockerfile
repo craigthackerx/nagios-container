@@ -1,16 +1,16 @@
-#Use Ubuntu or u dum dum
+#Use Ubuntu
 FROM ubuntu:latest
 
-
+#Set Enviroment Timezone
 ENV TZ=Europe/London
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
 
-#Bash because why would you use /bin/sh?
+#Use Bash
 SHELL ["/bin/bash", "-c"]
 
 
-#Update and install hings
+#Update and install things
 RUN apt-get update -y && apt-get -y install sudo \
     bash \
     nano \
@@ -60,7 +60,7 @@ RUN wget https://raw.githubusercontent.com/gdraheim/docker-systemctl-replacement
 RUN chmod a+x /usr/local/bin/systemctl
 
 
-#Add a standard user for later and open permissions to the needed directories, you're not important enough to use root.  Also install an ancient version of 
+#Add a standard user for later and open permissions to the needed directories
 RUN useradd -m -s /bin/bash nagios 
 RUN usermod -aG sudo nagios
 RUN groupadd nagcmd
