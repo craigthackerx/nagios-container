@@ -19,7 +19,6 @@ RUN apt-get update -y && apt-get -y install sudo \
     wget \
     git \
     build-essential \
-    inetutils-ping \
     nagios-plugins \
     openssl \
     ifupdown \ 
