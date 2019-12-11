@@ -5,7 +5,7 @@ To use:
 
 Clone repo and open your chosen shell inside folder (bash is the best)
 
-`docker . build -t somename/nagios:latest-1`
+`docker build . -t somename/nagios:latest-1`
 
 After build has finished, enter the container:
 
