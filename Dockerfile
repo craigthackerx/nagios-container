@@ -96,15 +96,15 @@ ADD nagios.conf /etc/apache2/conf-available/nagios.conf
 RUN htpasswd -b -c /usr/local/nagios/etc/htpasswd.users nagiosadmin Sp00kyP4ss
 RUN a2enconf nagios
 RUN a2enmod cgi rewrite
-WORKDIR /opt
 
 
 #Add Scipts & Config
 ADD libexec /usr/local/nagios/libexec/
-chmod a+x -R /usr/local/nagios
+RUN chmod a+x -R /usr/local/nagios
 
 
 #Expose Ports
 EXPOSE 80/tcp
 EXPOSE 5666/tcp
 EXPOSE 12489/tcp
+WORKDIR /usr/local/nagios
